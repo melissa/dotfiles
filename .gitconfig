@@ -1,0 +1,17 @@
+[user]
+	name = Melissa
+	email = melissa@puppetlabs.com
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+  ui = auto
+[alias]
+  st = status
+  co = checkout
+  br = branch
+  who = shortlog --no-merges --format='%h %s'
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  merge = merge --no-edit
+  cm = commit
+  cp = cherry-pick
