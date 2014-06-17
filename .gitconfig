@@ -1,11 +1,14 @@
 [user]
-	name = Melissa
-	email = melissa@puppetlabs.com
+  name = Melissa Stone
+  email = melissa@puppetlabs.com
 [color]
   diff = auto
   status = auto
   branch = auto
   ui = auto
+[core]
+  excludesfile = /Users/melissa/.gitignore_global
+[push]
 [alias]
   st = status
   co = checkout
@@ -15,3 +18,17 @@
   merge = merge --no-edit
   cm = commit
   cp = cherry-pick
+  ca = git commit --amend -CHEAD
+[diff]
+    tool = ksdiff
+[mergetool "ksdiff"]
+    cmd = ksdiff --merge --output \"${MERGED}\" --base \"${BASE}\" -- \"${LOCAL}\" --snapshot \"${REMOTE}\" --snapshot
+      trustExitCode = true
+[mergetool]
+    prompt = true
+[merge]
+    tool = ksdiff
+[difftool]
+    prompt = true
+[difftool "ksdiff"]
+    cmd = ksdiff --partial-changeset --relative-path \"${MERGED}\" -- \"${LOCAL}\" \"${REMOTE}\"

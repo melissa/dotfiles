@@ -4,6 +4,8 @@ set ruler
 " Displays line numbers
 set number
 
+color jellybeans
+
 " Allows the use of plugins
 set nocompatible
 filetype plugin on
@@ -50,4 +52,10 @@ au BufRead,BufNewFile *_spec.rb
   \ nmap <F8> :!rspec --color %<CR>
 
 "indentation matching for =>
+filetype plugin indent on
+
+" Pathogen
+filetype off
+call pathogen#infect()
+call pathogen#helptags()
 filetype plugin indent on

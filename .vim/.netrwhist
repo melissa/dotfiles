@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/Users/melissa/PuppetRepos/pe-mcollective/ext'
+let g:netrw_dirhist_2='/Users/melissa/PuppetRepos/pe-mcollective/ext/debian'
+let g:netrw_dirhist_3='/Users/melissa/PuppetRepos/puppetlabs-debbuilder/files'
+let g:netrw_dirhist_4='/Users/melissa/PuppetRepos/packaging/lib/packaging/config'
+let g:netrw_dirhist_5='/Users/Melissa/PuppetRepos/enterprise-dist/pe-3.3.x/packaging/deb/virt-what'
