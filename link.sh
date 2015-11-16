@@ -6,11 +6,6 @@ FILES=`ls -a | grep -v link | egrep -v '.git$' | egrep -v '^\.+$' | grep -v READ
 
 for f in $FILES
 do
-  if [ -e ~/$f ]
-  then
-    echo ~/$f already exists
-  else
-    ln -s $DIR/$f $HOME/$f
-    echo symlink created from $DIR/$f to ~/$f
-  fi
+  ln -sf $DIR/$f $HOME/$f
+  echo symlink created from $DIR/$f to ~/$f
 done
