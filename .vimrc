@@ -1,37 +1,37 @@
-set shiftwidth=2
-set expandtab
 set ruler
-" Displays line numbers
 set number
+set list
+set smartindent
+set autoindent
 
 color jellybeans
 
 " Allows the use of plugins
 set nocompatible
 filetype plugin on
-
 filetype indent on
 
 " Shows syntax highlighting
 syntax on
 
-" Highlights trailing whitespace
-highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
-if version >= 702
-  " Use :call clearmatches() to clear these matches.
-  " Give an indicator when we approach col 80 (>72)
-  " au BufWinEnter * let w:m1=matchadd('Search', '\%<81v.\%>72v', -1)
-  " Give a strong indicator when we exceed col 80(>80)
-  " au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
-  " Give an indicator of tailing white space.
-  au BufWinEnter * let w:m3=matchadd('ErrorMsg', '\s\+$', -1)
-  " Give an indicator of spaces before a tab.
-  au BufWinEnter * let w:m4=matchadd('ErrorMsg', ' \+\ze\t', -1)
-  " Give an indicator of tabs before a space.
-  au BufWinEnter * let w:m5=matchadd('ErrorMsg', '\t\+\ze ', -1)
-  " Just highlight all tabs.  They're annoying.
-  au BufWinEnter * let w:m6=matchadd('ErrorMsg', '\t\+', -1)
-end
+autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
+highlight ExtraWhitespace ctermbg=red guibg=red
+" Show trailing whitespace:
+match ExtraWhitespace /\s\+$/
+
+" Show trailing whitepace and spaces before a tab:
+match ExtraWhitespace /\s\+$\| \+\ze\t/
+
+" Show tabs that are not at the start of a line:
+match ExtraWhitespace /[^\t]\zs\t\+/
+
+" Show spaces used for indenting (so you use only tabs for indenting).
+match ExtraWhitespace /^\t*\zs \+/
+
+" Switch off :match highlighting.
+match
+
+match ExtraWhitespace /\s\+\%#\@<!$/
 
 
 " Prevents use of arrow keys for navegation
@@ -41,9 +41,10 @@ end
 "noremap <Right> <Nop>
 
 set tabstop=2
-set expandtab
 set softtabstop=2
 set shiftwidth=2
+set listchars=tab:»·,trail:·
+set expandtab
 
 " Set up puppet manifest and spec options
 au BufRead,BufNewFile *.pp
@@ -58,3 +59,15 @@ filetype plugin indent on
 filetype off
 call pathogen#infect()
 filetype plugin indent on
+
+"folding settings
+set foldmethod=indent   "fold based on indent
+set foldnestmax=10      "deepest fold is 10 levels
+set nofoldenable        "dont fold by default
+set foldlevel=1         "this is just what i use
+
+" Markdown folding
+set nocompatible
+if has("autocmd")
+  filetype plugin indent on
+endif

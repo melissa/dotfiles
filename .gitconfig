@@ -1,34 +1,45 @@
 [user]
-  name = Melissa Stone
-  email = melissa@puppetlabs.com
-[color]
-  diff = auto
-  status = auto
-  branch = auto
-  ui = auto
-[core]
-  excludesfile = /Users/melissa/.gitignore_global
-[push]
+    name = Melissa Stone
+    email = melissa@puppetlabs.com
+
 [alias]
-  st = status
-  co = checkout
-  br = branch
-  who = shortlog --no-merges --format='%h %s'
-  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-  merge = merge --no-edit
-  cm = commit
-  cp = cherry-pick
-  ca = git commit --amend -CHEAD
-[diff]
-    tool = ksdiff
-[mergetool "ksdiff"]
-    cmd = ksdiff --merge --output \"${MERGED}\" --base \"${BASE}\" -- \"${LOCAL}\" --snapshot \"${REMOTE}\" --snapshot
-      trustExitCode = true
-[mergetool]
-    prompt = true
+    br = branch
+    ci = commit
+    co = checkout
+    df = diff
+    g = grep -I
+    lg = log -p
+    loq = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(bold white)— %an%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative
+    pb = publish-branch
+    rb = rbranch
+    rc = rank-contributors
+    rv = review
+    sm = show-merges
+    st = status
+    stat = status
+    gerp = grep
+    grap = grep
+    dat = clone
+    mah = checkout
+    rekt = reset
+    cp = cherry-pick
+
+[color]
+    ui = true
+
+[color "branch"]
+    current = yellow reverse
+    local   = yellow
+    remote  = green
+
+[core]
+    editor = vim
+
 [merge]
-    tool = ksdiff
-[difftool]
-    prompt = true
-[difftool "ksdiff"]
-    cmd = ksdiff --partial-changeset --relative-path \"${MERGED}\" -- \"${LOCAL}\" \"${REMOTE}\"
+  tool = vimdiff
+  conflictstyle = diff3
+
+[filter "media"]
+    required = true
+    clean = git media clean %f
+    smudge = git media smudge %f
