@@ -1,5 +1,5 @@
 export USER=melissa
-if [ "$HOME" -eq "/Users/Melissa" ]; then
+if [ "$HOME" = "/Users/Melissa" ]; then
   export HOME=/Users/$USER
 fi
 export TEAM=release
