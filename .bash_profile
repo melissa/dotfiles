@@ -5,7 +5,7 @@ fi
 export TEAM=release
 export PATH=$PATH:$HOME/bin
 
-source $HOME/git-completion.bash
+source $HOME/.git-completion.bash
 
 if [ -e $HOME/.bashrc ]; then
   source $HOME/.bashrc
