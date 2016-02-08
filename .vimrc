@@ -71,3 +71,5 @@ set nocompatible
 if has("autocmd")
   filetype plugin indent on
 endif
+
+set spell spelllang=en_us

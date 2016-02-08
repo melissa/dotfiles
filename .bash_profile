@@ -3,7 +3,9 @@ if [ "$HOME" = "/Users/Melissa" ]; then
   export HOME=/Users/$USER
 fi
 export TEAM=release
-export PATH=$PATH:$HOME/bin
+export PATH="$HOME/.rbenv/bin:$PATH:$HOME/bin"
+
+eval "$(rbenv init -)"
 
 source $HOME/.git-completion.bash
 
@@ -41,3 +43,7 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias ~='cd ~'
+
+alias vanagon_loc="export VANAGON_LOCATION=file:///home/melissa/vanagon"
+alias win_64="time bundle exec build puppet-agent windows-2012r2-x64 --preserve"
+alias win_86="time bundle exec build puppet-agent windows-2012r2-x86 --preserve"
