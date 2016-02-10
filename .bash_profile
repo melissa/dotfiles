@@ -5,7 +5,9 @@ fi
 export TEAM=release
 export PATH="$HOME/.rbenv/bin:$PATH:$HOME/bin"
 
+if [ -x "$(command -v rbenv)" ]; then
 eval "$(rbenv init -)"
+fi
 
 source $HOME/.git-completion.bash
 
