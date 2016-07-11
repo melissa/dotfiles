@@ -11,6 +11,9 @@ else
   au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
 endif
 
+" Colors!
+colorscheme srcery
+
 " I have no idea what this does, but I like the colors better with it
 set t_Co=256
 
