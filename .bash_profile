@@ -49,5 +49,3 @@ alias .....='cd ../../../..'
 alias ~='cd ~'
 
 alias vanagon_loc="export VANAGON_LOCATION=file:///home/melissa/vanagon"
-alias win_64="time bundle exec build puppet-agent windows-2012r2-x64 --preserve"
-alias win_86="time bundle exec build puppet-agent windows-2012r2-x86 --preserve"
