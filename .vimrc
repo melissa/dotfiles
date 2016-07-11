@@ -4,8 +4,6 @@ set list
 set smartindent
 set autoindent
 
-color jellybeans
-
 " Allows the use of plugins
 set nocompatible
 filetype plugin on
@@ -19,7 +17,7 @@ highlight ExtraWhitespace ctermbg=red guibg=red
 " Show trailing whitespace:
 match ExtraWhitespace /\s\+$/
 
-" Show trailing whitepace and spaces before a tab:
+" Show trailing whitespace and spaces before a tab:
 match ExtraWhitespace /\s\+$\| \+\ze\t/
 
 " Show tabs that are not at the start of a line:
@@ -73,3 +71,9 @@ if has("autocmd")
 endif
 
 set spell spelllang=en_us
+
+if exists('+colorcolumn')
+  set colorcolumn=80
+else
+  au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+endif

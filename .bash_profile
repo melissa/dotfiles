@@ -39,6 +39,8 @@ alias bootstrap="rake package:implode package:bootstrap"
 alias uber_build="rake pl:jenkins:uber_build --trace"
 alias uber_ship="rake pl:jenkins:uber_ship --trace"
 
+alias go="git clone"
+
 # up 'n' folders
 alias ..='cd ..'
 alias ...='cd ../..'
