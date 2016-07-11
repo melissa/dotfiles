@@ -4,6 +4,16 @@ set list
 set smartindent
 set autoindent
 
+" Add a bar at column 80
+if exists('+colorcolumn')
+  set colorcolumn=80
+else
+  au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+endif
+
+" I have no idea what this does, but I like the colors better with it
+set t_Co=256
+
 " Allows the use of plugins
 set nocompatible
 filetype plugin on
@@ -71,9 +81,3 @@ if has("autocmd")
 endif
 
 set spell spelllang=en_us
-
-if exists('+colorcolumn')
-  set colorcolumn=80
-else
-  au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
-endif
