@@ -11,7 +11,8 @@
 
 [alias]
   br = branch
-  ci = commit
+  ci = commit -S
+  commit = commit -S
   co = checkout
   df = diff
   g = grep -I
