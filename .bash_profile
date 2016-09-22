@@ -20,11 +20,11 @@ function parse_git_branch(){
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/:(\1)/'
 }
 
-PS1="[\$?] \[\033[0;32m\]\u@\h:\[\033[0;96m\]\w\[\033[0;93m\]\$(parse_git_branch)\[\033[0m\]$ "
+PS1="[\$?] \[\033[0;32m\]\u@\h:\[\033[0;94m\]\w\[\033[0;93m\]\$(parse_git_branch)\[\033[0m\]$ "
 
 # display ls colors
 export CLICOLOR=1
-export LS_COLORS='ln=93:or=101:mi=101:di=32:fi=0:ex=36'
+export LS_COLORS='ln=93:or=101:mi=101:di=32:fi=0:ex=35'
 
 # export editor
 export EDITOR=vim
