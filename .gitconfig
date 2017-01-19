@@ -17,7 +17,7 @@
   co = checkout
   df = diff
   g = grep -I
-  lg = log --graph --pretty=oneline --abbrev-commit
+  lg = log --graph --pretty=oneline --abbrev-commit --decorate --pretty=format:'%C(yellow)%h%C(reset) %C(green)%G?%C(reset) %C(blue)%an%C(reset) %C(cyan)%cr%C(reset) %s %C(auto)%d%C(reset)' --graph --date-order
   loq = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(bold white)— %an%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative
   pb = publish-branch
   rb = rbranch
