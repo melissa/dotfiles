@@ -4,15 +4,12 @@ set list
 set smartindent
 set autoindent
 
-" Add a bar at column 80
-if exists('+colorcolumn')
-  set colorcolumn=80
-else
-  au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
-endif
-
 " Colors!
 colorscheme srcery
+
+" Add a bar at column 80
+set colorcolumn=80
+highlight ColorColumn ctermbg=lightgrey guibg=lightgrey
 
 " I have no idea what this does, but I like the colors better with it
 set t_Co=256
@@ -21,6 +18,52 @@ set t_Co=256
 set nocompatible
 filetype plugin on
 filetype indent on
+
+" Setting up Vundle - the vim plugin bundler
+let iCanHazVundle=1
+let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
+if !filereadable(vundle_readme)
+    echo "Installing Vundle.."
+    echo ""
+    silent !mkdir -p ~/.vim/bundle
+    silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
+    let iCanHazVundle=0
+endif
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+if iCanHazVundle == 0
+    echo "Installing Bundles, please ignore key map error messages"
+    echo ""
+    :BundleInstall
+endif
+
+" Vundle Bundles
+" ============================================================================
+" Required Plugins
+Bundle 'gmarik/vundle'
+" Approved Bundles
+Bundle 'scrooloose/nerdtree'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-repeat'
+Bundle 'tpope/vim-fugitive'
+
+" Set Leader
+let mapleader = ","
+
+" NERDTreeToggle {{{2
+" --------------
+function! NERDTreeToggleOrFocus()
+    if expand("%") =~ "NERD_tree"
+        :NERDTreeToggle
+    else
+        call NERDTreeFocus()
+    endif
+endfunction
+nnoremap <leader>n :call NERDTreeToggleOrFocus()<CR>
+" }}}
+
+
 
 " Shows syntax highlighting
 syntax on

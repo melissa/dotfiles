@@ -49,3 +49,4 @@ alias .....='cd ../../../..'
 alias ~='cd ~'
 
 alias vanagon_loc="export VANAGON_LOCATION=file:///home/melissa/vanagon"
+alias packaging_loc="export PACKAGING_LOCATION=file:///home/melissa/packaging"
