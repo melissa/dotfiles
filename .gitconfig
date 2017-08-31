@@ -13,7 +13,6 @@
   br = branch
   cm = commit -S -s
   c = commit -S -s
-  commit = commit -S -s
   co = checkout
   df = diff
   g = grep -I
