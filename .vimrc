@@ -127,3 +127,6 @@ if has("autocmd")
 endif
 
 set spell spelllang=en_us
+
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%81v.\+/

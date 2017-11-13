@@ -10,7 +10,7 @@
 # RVM /RBEnv minutia #
 ######################
 .ruby-gemset
-.ruby-version
+*/.ruby-version
 
 # Packages #
 ############

@@ -34,7 +34,7 @@ export HISTSIZE=1000000
 export HISTFILESIZE=1000000000
 
 alias be="bundle exec"
-alias bi="bundle install"
+alias bi="bundle install --path .bundle"
 alias bootstrap="rake package:implode package:bootstrap"
 alias uber_build="rake pl:jenkins:uber_build --trace"
 alias uber_ship="rake pl:jenkins:uber_ship --trace"
@@ -50,3 +50,6 @@ alias ~='cd ~'
 
 alias vanagon_loc="export VANAGON_LOCATION=file:///home/melissa/vanagon"
 alias packaging_loc="export PACKAGING_LOCATION=file:///home/melissa/packaging"
+
+alias rspec="bundle exec rspec spec --color --format documentation --order random"
+alias rspec_all="rbenv local 2.1.1 ; bundle install ; bundle exec rspec spec --color --format documentation --order random ; rbenv local 2.4.1 ; bundle install ; bundle exec rspec spec --color --format documentation --order random"
