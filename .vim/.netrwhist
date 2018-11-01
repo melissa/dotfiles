@@ -1,3 +1,11 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =1
-let g:netrw_dirhist_1='/Users/Melissa/puppetserver/ruby/puppet'
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/Users/Melissa/modules/zfs_core/spec/acceptance/tests'
+let g:netrw_dirhist_2='/Users/Melissa/modules/network_device_core/lib/puppet/util/network_device'
+let g:netrw_dirhist_3='/Users/Melissa/beaker-puppet/lib/beaker-puppet'
+let g:netrw_dirhist_4='/Users/Melissa/modules/network_device_core/lib/puppet/provider/interface'
+let g:netrw_dirhist_5='/Users/Melissa/modules/network_device_core/lib/puppet/provider/vlan'
+let g:netrw_dirhist_6='/Users/Melissa/ci-job-configs/jenkii/cinext-master01/projects'
+let g:netrw_dirhist_7='/Users/Melissa/modules/k5login_core/spec/lib/puppet_spec'
+let g:netrw_dirhist_8='/Users/Melissa/beaker/lib/beaker/dsl'
+let g:netrw_dirhist_9='/Users/Melissa/modules/yumrepo_core/locales'

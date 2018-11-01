@@ -4,10 +4,10 @@
   signingkey = BAD5F0A392E98572
 
 [commit]
-  gpgsign = true
+	gpgsign = true
 
 [gpg]
-  program = gpg
+	program = gpg
 
 [alias]
   br = branch
@@ -31,6 +31,20 @@
   mah = checkout
   rekt = reset
   cp = cherry-pick
+  blam = blame -M -C -C -w
+  bl = blame -M -C -C -w
+  club = clean -ffdx -e Gemfile.local -e .vscode -e .ruby-version
+  wip = !sh -c 'git add -A . && git commit -m wip' -
+  diffc = diff --cached
+  fixup = !sh -c 'git commit --fixup=$1' -
+  squash = !sh -c 'git commit --squash=$1' -
+  ri = rebase --interactive --autosquash
+  merge-topic = merge --no-ff
+  fall = fetch --all
+  recent = !git for-each-ref --color=always --sort=-committerdate refs/heads --format='%(HEAD)%(color:yellow)%(refname:short)|%(color:bold green)%(committerdate:relative)|%(color:blue)%(subject)|%(color:magenta)%(authorname)%(color:reset)' | column -ts'|' | cut -c -$(tput cols)
+
+[push]
+  default = nothing
 
 [color]
   ui = true
@@ -41,8 +55,7 @@
   remote  = green
 
 [core]
-  editor = vim
-  excludesfile = ~/.gitignore
+	excludesfile = /Users/melissa/.gitignore_global
 
 [merge]
   tool = vimdiff

@@ -43,3 +43,14 @@ Icon?
 ehthumbs.db
 Thumbs.db
 *~
+
+# Byebug data #
+# #############
+.byebug_history
+
+# Local bundler files #
+#######################
+Gemfile.local
+
+.vmfloaty.yml
+.bashrc

@@ -94,11 +94,12 @@ match ExtraWhitespace /\s\+\%#\@<!$/
 "noremap <Left> <Nop>
 "noremap <Right> <Nop>
 
+set expandtab
 set tabstop=2
-set softtabstop=2
 set shiftwidth=2
 set listchars=tab:»·,trail:·
-set expandtab
+highlight SpecialKey ctermbg=red guibg=red
+set smartindent
 
 " Set up puppet manifest and spec options
 au BufRead,BufNewFile *.pp
@@ -126,7 +127,16 @@ if has("autocmd")
   filetype plugin indent on
 endif
 
+" Vim jumps to the last position when reopening a file
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+    \| exe "normal! g'\"" | endif
+endif
+
 set spell spelllang=en_us
 
+" Highlight characters that go beyond 80
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 match OverLength /\%81v.\+/
+
+map Q gqap
