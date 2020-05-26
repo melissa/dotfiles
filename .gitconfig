@@ -1,10 +1,6 @@
 [user]
   name = Melissa Stone
   email = melissa@puppet.com
-  signingkey = BAD5F0A392E98572
-
-[commit]
-	gpgsign = true
 
 [gpg]
 	program = gpg
